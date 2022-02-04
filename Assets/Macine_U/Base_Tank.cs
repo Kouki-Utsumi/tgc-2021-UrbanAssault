@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Base_Tank : Macine
 {
+    /*
     // Start is called before the first frame update
     Rigidbody Rb;
     Vector3 Time1;
@@ -14,7 +15,7 @@ public class Base_Tank : Macine
     private GameObject ThisTank;
     [SerializeField]public GameObject Muzzle;//èeå˚
     [SerializeField] public GameObject Gun;//èe
-    Vector3 vec;//èeÇÃà íu
+
     void Start()
     {
         Rb = this.gameObject.GetComponent<Rigidbody>();
@@ -31,10 +32,6 @@ public class Base_Tank : Macine
 
     }
 
-    public void ConstructorBase_Tank(int num, float Attack, float Acceleration, float Decelerate, float DelayTimeofFiring, float RotateSpeed, int BulletNumofFiring, Vector3 MaxSpeed) 
-    {
-        ConstructorMacine(num, Attack, Acceleration, Decelerate, DelayTimeofFiring, RotateSpeed, BulletNumofFiring, MaxSpeed);
-    }
 
     // Update is called once per frame
     [SerializeField]float Timer;
@@ -68,20 +65,7 @@ public class Base_Tank : Macine
         }
 
     }
-    public void Rotate()//âÒì]
-    {
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-
-            this.gameObject.transform.Rotate(new Vector3(0, -GetRotateSpeed(), 0));
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-
-            this.gameObject.transform.Rotate(new Vector3(0, GetRotateSpeed(), 0));
-
-        }
-    }
+    
     
     public void Measurement(Rigidbody Rb)//åªç›ÇÃÉXÉsÅ[ÉhÇéZèoÇ∑ÇÈ
     {
@@ -92,9 +76,9 @@ public class Base_Tank : Macine
     /// </summary>
     public void Fire()
     {
-        vec = Muzzle.transform.position;
-        GameObject bullet=Instantiate(Bullet, vec,this.transform.rotation);
-        bullet.GetComponent<Bullet_Tank>().Fire(Muzzle);
+        Vector3 gun_pos= Muzzle.transform.position;
+        GameObject bullet=Instantiate(Bullet, gun_pos,this.transform.rotation);
+        bullet.GetComponent<Bullet_Tank>().Fire(Muzzle.GetComponent<Rigidbody>());
         
     }
     private float MaxRotate=1.00f;
@@ -134,5 +118,6 @@ public class Base_Tank : Macine
         }
 
     }
+    */
     
 }

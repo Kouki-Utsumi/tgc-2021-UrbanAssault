@@ -18,24 +18,19 @@ public class Gun : MonoBehaviour
     float DelayTimeofFiring;//銃の連射速度
     float Timer;
 
-
-
     void Start()
     {
         GunWeapon = this.gameObject;
         MuzzlePos = transform.Find("Muzzle").GetComponent<Transform>();
         Fighter = transform.parent.gameObject.GetComponent<Fighter>();
-        Attack = Fighter.GetAttack();
+        //Attack = Fighter.GetAttack();
     }
-
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) Shoot();
-        Bullet = BulletManager.UsingBullet;
+        
     }
-
-
     //弾の生成と銃の正面方向に力を加える
     void Shoot()
     {

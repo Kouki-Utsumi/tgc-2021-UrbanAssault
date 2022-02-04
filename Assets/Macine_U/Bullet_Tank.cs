@@ -6,15 +6,14 @@ public class Bullet_Tank : Bullet
 {
     GameObject ParentTank;
     Rigidbody Rb;
-    public void Fire(GameObject Tank)
+    public void Fire(Rigidbody muzzle_rb)
     {
-        ParentTank = Tank;
-        Rb = this.gameObject.GetComponent<Rigidbody>();
+        Rb = muzzle_rb;
     }
     protected override void Update()
     {
         base.Update();
-        Rb.AddForce(ParentTank.transform.forward * Speed);
+        Rb.AddForce(ParentTank.transform.forward * 10);
     }
 
 
