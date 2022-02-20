@@ -16,7 +16,7 @@ public class Macine : ImgMacine
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
-        tf = GetComponent<Transform>();
+        
     }
     public bool SpeedComparison()//現在のスピードとMaxスピードを比較
     {

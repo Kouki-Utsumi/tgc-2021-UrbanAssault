@@ -9,11 +9,13 @@ public class Tank_Aim_Function : Tank_Move_Function
     {
         base.Start();
         transform_gun = transform.Find("GUN").transform;
+        
     }
-
+    
     protected override void Update()
     {
         base.Update();
+        
         if (Input.GetKey(KeyCode.A))
         {
             PushA();
@@ -22,28 +24,35 @@ public class Tank_Aim_Function : Tank_Move_Function
         {
             PushZ();
         }
-        checkrotate = transform_gun.rotation.z;
+        checkrotatex = transform_gun.localEulerAngles.x;
+
+        pcheckrotatex = Mathf.Abs(gameObject.transform.localEulerAngles.x);
+        x = checkrotatex - pcheckrotatex;
+
     }
-    [SerializeField] private float max_rotate = 0.6f;
-    [SerializeField] private float min_rotate = 0.5f;
-    public float checkrotate;
+    [SerializeField] private float max_rotate = 0.0f;
+    [SerializeField] private float min_rotate = -0.6f;
+    public float checkrotatex;
+    public float pcheckrotatex;
+    public float x;
+
     public override void PushA()
     {
         
-        if (transform_gun.rotation.z > min_rotate)
+        if (transform_gun.localEulerAngles.x < max_rotate)
         {
-            transform_gun.Rotate(new Vector3(0, 0, rotate_speed));
-            
+            transform_gun.Rotate(new Vector3(rotate_speed, 0, 0));
             
         }
     }
     public override void PushZ()
     {
         
-        if (transform_gun.rotation.z < max_rotate)
+        if (transform_gun.localEulerAngles.x > min_rotate)
         {
-            transform_gun.Rotate(new Vector3(0, 0, rotate_speed));
+            transform_gun.Rotate(new Vector3(-rotate_speed, 0, 0));
             
+
         }
         
     }

@@ -12,6 +12,7 @@ public class Tank_Move_Function : Macine
         base.Start();
         zero = new Vector3(0, 0, 0);
         player_existence = true;
+        tf = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -41,7 +42,7 @@ public class Tank_Move_Function : Macine
         {
             oder.y = -1;
         }
-        rb.AddForce(tf.forward * acceleration *oder.x);
+        rb.AddForce(tf.forward * acceleration * oder.x);
         tf.Rotate(new Vector3(0, rotate_speed*oder.y, 0));
     }
 }
