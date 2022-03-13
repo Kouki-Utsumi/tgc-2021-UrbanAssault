@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tank_Aim_Function : Tank_Move_Function
+public class Tank_Aim_Function : Macine
 {
     private Transform transform_gun;
     protected override void Start()
@@ -12,9 +12,9 @@ public class Tank_Aim_Function : Tank_Move_Function
         
     }
     
-    protected override void Update()
+    protected void Update()
     {
-        base.Update();
+        
         
         if (Input.GetKey(KeyCode.A))
         {
