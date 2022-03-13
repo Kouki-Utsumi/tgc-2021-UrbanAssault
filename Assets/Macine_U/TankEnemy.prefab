@@ -1113,6 +1113,7 @@ GameObject:
   - component: {fileID: 1676933013599886413}
   - component: {fileID: 1068014730128850484}
   - component: {fileID: 5269229176117104986}
+  - component: {fileID: 6619035111212889509}
   m_Layer: 0
   m_Name: TankEnemy
   m_TagString: Untagged
@@ -1238,6 +1239,28 @@ MonoBehaviour:
   rotate_speed: 0
   BulletNumofFiring: 0
   maxSpeed: {x: 0, y: 0, z: 0}
+  target: {fileID: 0}
+--- !u!114 &6619035111212889509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3988285251123445063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f6dadc60966da3468da0694340bf6f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Macinenumber: 0
+  Attack: 0
+  acceleration: 0
+  DelayTimeofFiring: 0
+  rotate_speed: 0
+  BulletNumofFiring: 0
+  maxSpeed: {x: 0, y: 0, z: 0}
+  enemyAi: {fileID: 0}
+  enemyLenge: 1000
 --- !u!1 &4764551303915758450
 GameObject:
   m_ObjectHideFlags: 0
